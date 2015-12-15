@@ -1,0 +1,60 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 작성
+    form(action='/survey', method='POST')
+      .form-group
+        label(for='name') 제목
+        input.form-control(type='text', id='name', name='name', placeholder='Survey name')
+      .form-group
+        label(for='content') 내용
+        textarea.form-control(id='content', rows='10', name='content', placeholder='content here')
+    
+      each question in questions
+        if (question.name=='Selection')
+          p
+            label(for='Quename') 객관식
+            input.form-control(type='text', id='textarea', placeholder='Question here', name='select1')
+            .input-group
+              .input-group-addon
+                input(type='radio', name='select')
+              input.form-control(type='text', id='textarea', name='select2')
+            .input-group
+              .input-group-addon
+                input(type='radio', name='select')
+              input.form-control(type='text', id='textarea', name='select3')
+            .input-group
+              .input-group-addon
+                input(type='radio', name='select')
+              input.form-control(type='text', id='textarea', name='select4')
+            .input-group
+              .input-group-addon
+                input(type='radio', name='select')
+              input.form-control(type='text', id='textarea', name='select5')
+        else if(question.name=='OneQueText')
+          p
+            label(for='Quename') 주관식
+            input.form-control(type='text', id='textarea', placeholder='Question here', name='select1')
+            input.form-control(type='text', id='textOneQue', placeholder='Input here')
+        else if(question.name=='Opinion')
+          p
+            label(for='Quename') 의견
+            input.form-control(type='text', id='textarea', placeholder='Question here', name='select1')
+            textarea.form-control(id='opinion', rows='5', name='opinion', placeholder='Opinion here')
+      div.form-actions
+        a.btn.btn-default(href='javascript:window.history.back();') 뒤로
+        button.btn.btn-primary(type='submit') 설문추가
+    
+    form.form-inline(action='/survey/new/Question1', method='POST')  
+      p
+        button.btn.btn-danger(type='submit') 객관식
+    form.form-inline(action='/survey/new/Question2', method='POST')  
+      p 
+        button.btn.btn-danger(type='submit') 주관식
+
+    form.form-inline(action='/survey/new/Question3', method='POST')  
+      p 
+        button.btn.btn-danger(type='submit') 의견
+              
+    script('text/javascript' src="/javascripts/questions.js").
