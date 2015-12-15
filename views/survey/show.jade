@@ -11,7 +11,7 @@ block content
     each question in questions
       if (question.name=='Selection')
         p
-          label(for='Quename') 객관식
+          label(for='Quename') Multiple
           br
           label(for='Quename')=question.content1
           .input-group
@@ -32,12 +32,12 @@ block content
             label(for='Quename')=question.content5
       else if(question.name=='OneQueText')
         p
-          label(for='Quename') 주관식
+          label(for='Quename') Question
           input.form-control(type='text', id='textarea', placeholder='Question here', name='select1')
           input.form-control(type='text', id='textOneQue', placeholder='Input here')
       else if(question.name=='Opinion')
         p
-          label(for='Quename') 의견
+          label(for='Quename') Opinion
           input.form-control(type='text', id='textarea', placeholder='Question here', name='select1')
           textarea.form-control(id='opinion', rows='5', name='opinion', placeholder='Opinion here')
     

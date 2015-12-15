@@ -28,7 +28,7 @@ if (app.get('env') === 'development') {
 app.locals.moment = require('moment');
 
 // mongodb connect
-mongoose.connect('mongodb://subin1:subin1@ds053764.mongolab.com:53764/shinsubin');
+mongoose.connect('mongodb://junhi1:junhi1@ds035674.mongolab.com:35674/junhi');
 mongoose.connection.on('error', console.log);
 
 // uncomment after placing your favicon in /public

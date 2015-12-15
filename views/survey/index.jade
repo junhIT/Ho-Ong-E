@@ -7,9 +7,9 @@ block content
     table.table.table-striped.table-bordered
       thead
         tr
-          th 제목
-          th 내용
-          th 등록 시간
+          th Title
+          th Content
+          th CreatedAt
           th
       tbody
         each survey in surveys
@@ -22,4 +22,4 @@ block content
               a.btn.btn-xs.btn-default(href='/survey/#{survey._id}/edit') 수정
 
               a.btn.btn-xs.btn-default(href='/survey/#{survey._id}?_method=DELETE') 삭제
-    a.btn.btn-primary(href='/survey/new') 추가
+    a.btn.btn-primary(href='/survey/new') Add

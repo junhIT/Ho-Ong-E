@@ -34,7 +34,7 @@ router.post('/', function(req, res, next) {
       if (err) {
         return next(err);
       }
-      req.flash('success','성공');
+      req.flash('success','Success');
 
     });
     for(var i=0; i<req.user.numQue; i++){
@@ -103,10 +103,10 @@ router.post('/new/Question1', function(req, res, next) {
 
   Nquestion.save(function(err) {
     if (err) {
-      req.flash('success','실패');
+      req.flash('success','Fail');
       return next(err);
     }
-    req.flash('success','성공');
+    req.flash('success','Success');
     res.redirect('/survey/new');
   });
 });
@@ -132,10 +132,10 @@ router.post('/new/Question2', function(req, res, next) {
 
   Nquestion.save(function(err) {
     if (err) {
-      req.flash('success','실패');
+      req.flash('success','Fail');
       return next(err);
     }
-    req.flash('success','성공');
+    req.flash('success','Success');
     res.redirect('/survey/new');
   });
 });
@@ -160,10 +160,10 @@ router.post('/new/Question3', function(req, res, next) {
 
   Nquestion.save(function(err) {
     if (err) {
-      req.flash('success','실패');
+      req.flash('success','Fail');
       return next(err);
     }
-    req.flash('success','성공');
+    req.flash('success','Success');
     res.redirect('/survey/new');
   });
 });

@@ -2,14 +2,14 @@ extends ../layout
 
 block content
   .container
-    h1.page-header 설문 조사 목록
+    h1.page-header 설문 조사
 
     table.table.table-striped.table-bordered
       thead
         tr
-          th 설문 조사 제목
-          th 설문 내용
-          th 설문 등록 시간
+          th Title
+          th Content
+          th CreatedAt
           th
       tbody
         each user in users
@@ -22,4 +22,4 @@ block content
               a.btn.btn-xs.btn-default(href='/users/#{user._id}/edit') 수정
 
               a.btn.btn-xs.btn-default(href='/users/#{user._id}?_method=DELETE') 삭제
-    a.btn.btn-primary(href='/users/new') 사용자추가
+    a.btn.btn-primary(href='/users/new') Add
